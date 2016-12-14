@@ -14,6 +14,7 @@
 
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="css/materialize.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 
 	<!--JS-->
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
@@ -76,7 +77,7 @@
 	<!--Contenido-->
 	<main>
 		<div class="row">
-			<div class="col s12"><h4 class="grey-text" style="margin-left: 10px">Ultimas entradas:</h4></div>
+			<div class="col s12"><h4 class="grey-text animated fadeIn" style="margin-left: 10px">Ultimas entradas:</h4></div>
 
 			<div class="col s12 m12 l8" id="entradas">
 				<?php 
@@ -85,14 +86,15 @@
 				?>
 
 			</div>
-			<hr>
-
-
+			<br>
+			<!--FB Page -->
 			<div class="col s12 m12 l4">
-				<h5 class="grey-text">Nosotros en Facebook:</h5>
+				<hr>
+				<h5 class="grey-text animated fadeIn">Nosotros en Facebook:</h5>
 
 				<div class="fb-page" data-href="https://www.facebook.com/theloremipsumstore/" data-tabs="timeline" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/theloremipsumstore/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/theloremipsumstore/">Lorem</a></blockquote></div>
 			</div>
+
 		</div>
 	</main>
 	<!--Contenido-->

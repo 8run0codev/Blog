@@ -168,7 +168,7 @@
 				<div class="col s12 m4 l4">
 					<div class="container">
 						<div class="input-field col s12 m12 l12">
-							<select name="categoria">
+							<select name="categoria" id="categoria">
 								<option value="" disabled selected>Seleciona alguna categoria</option>
 								<option value="Comunicado">Comunicados</option>
 								<option value="Evento">Eventos</option>
@@ -209,10 +209,10 @@
 			<div class="col s12"><br><h5 class="grey-text">Editar Slider</h5><br></div>
 
 			<!--Slide 1 -->
-			<form action="editarSlide.php" method="POST" enctype="multipart/form-data">
+			<form onsubmit="return validarSlide()" action="editarSlide.php" method="POST" enctype="multipart/form-data">
 				<div class="col s12 panelSlider">
 					<div class="input-field col s12 m12 l12">
-						<select name="idSlide">
+						<select name="idSlide" id="idSlide">
 							<option value="" disabled selected>Slide a editar</option>
 							<option value="1">Slide 1</option>
 							<option value="2">Slide 2</option>
@@ -240,7 +240,7 @@
 						</div>
 					</div>
 
-					<input type="submit" class="btn waves-effect waves-light  green darken-1 hoverable" value="Editar"><p></p>
+					<input type="submit" class="btn waves-effect waves-light  green darken-1 hoverable right" value="Editar"><p></p>
 				</div>
 			</form>
 			<div class="divider"></div>

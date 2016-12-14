@@ -1,7 +1,7 @@
 <?php 
 
 		echo       "<div class='col s12 m6 l6'>";
-		echo         "<div class='card hoverable'>";
+		echo         "<div class='card hoverable animated zoomIn'>";
 		echo           "<div class='card-image'>";
 		echo             "<img src='img/entradas/" . $registro["imgEntrada"] . "' height = '250px'>";
 		echo             "<span class='card-title'>" . $registro["tituloEntrada"] . "</span>";

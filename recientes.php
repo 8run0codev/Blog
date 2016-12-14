@@ -4,7 +4,7 @@ $id = $_GET["id"];
   $consulta =  mysql_query("SELECT * FROM entrada WHERE idEntrada !='$id' ORDER BY idEntrada DESC LIMIT 3");
 	while ($registro = mysql_fetch_array($consulta)) {
 
-	echo	"<div class='card horizontal hoverable'>";
+	echo	"<div class='card horizontal hoverable animated pulse'>";
 	echo		"<div class='card-image'>";
 	echo			"<img src='img/entradas/". $registro["imgEntrada"] . "'>";
 	echo		"</div>";

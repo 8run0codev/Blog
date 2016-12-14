@@ -23,20 +23,55 @@
 
 	
 	<?php 
+	//Varaibles
 	include 'conex.php';
 	$idSlide = $_POST["idSlide"];
 	$tituloSlide = $_POST["titulo1"];
 	$slogan = $_POST["slogan1"];
-
 	$nombre_imagenSlide = $_FILES["imgslide"]["name"];
 	$nombre_temporal = $_FILES["imgslide"]["tmp_name"];
 	$tipo_archivo = $_FILES["imgslide"]["type"];
 	$destino_imagen = "img/slides/" . $nombre_imagenSlide;
 
 
-	
+	//comprobar que es una imagen
+	if ($tipo_archivo == "image/jpeg" || $tipo_archivo == "image/jpg" || $tipo_archivo == "image/png" || $tipo_archivo == "image/gif" || $tipo_archivo == "image/PNG") {	
+		//subir nueva imagen	
+		move_uploaded_file($nombre_temporal, $destino_imagen);
 
+		//borrar imagen anterior		
+		$sql =  "SELECT imagen FROM slide WHERE idSlide = $idSlide";
+		$res = mysql_query($sql) or die('Error: ' . mysql_error());
+		$ruta = "img/slides/" . mysql_result($res, 0);
+		unlink($ruta);
+
+        //Ingresamos nuevos datos
 		$enviarSlide = mysql_query("UPDATE slide SET imagen = '$nombre_imagenSlide', titulo='$tituloSlide', slogan = '$slogan' WHERE idSlide = '$idSlide' ");
+		//Mensaje de edicion 
+
+		echo		"<main class='row valign'>";
+		echo			"<div>";
+		echo				"<div class='preloader-wrapper big active row valign'>";
+		echo					"<div class='spinner-layer spinner-blue-only'>";
+		echo						"<div class='circle-clipper left'>";
+		echo							"<div class='circle'></div>";
+		echo								"</div><div class='gap-patch'>";
+		echo									"<div class='circle'></div>";
+		echo								"</div><div class='circle-clipper right'>";
+		echo							"<div class='circle'></div>";
+		echo						"</div>";
+		echo					"</div>";
+		echo				"</div>";
+		echo 				"<p class='center blue-text'>Editando...</p>";
+		echo			"</div>";
+		echo		"</main>";
+
+	}
+	else
+	{
+		header("Location: panelEntradas.php?imgError");
+		exit();
+	}	
 
 	if (!isset($enviarSlide)) {
 		
@@ -60,36 +95,12 @@
 	}
 	else
 	{
-				if ($tipo_archivo == "image/jpeg" || $tipo_archivo == "image/jpg" || $tipo_archivo == "image/png" || $tipo_archivo == "image/gif" || $tipo_archivo == "image/PNG") {
-				move_uploaded_file($nombre_temporal, $destino_imagen);
-				echo		"<main class='row valign'>";
-				echo			"<div>";
-				echo				"<div class='preloader-wrapper big active row valign'>";
-				echo					"<div class='spinner-layer spinner-blue-only'>";
-				echo						"<div class='circle-clipper left'>";
-				echo							"<div class='circle'></div>";
-				echo								"</div><div class='gap-patch'>";
-				echo									"<div class='circle'></div>";
-				echo								"</div><div class='circle-clipper right'>";
-				echo							"<div class='circle'></div>";
-				echo						"</div>";
-				echo					"</div>";
-				echo				"</div>";
-				echo 				"<p class='center blue-text'>Editando...</p>";
-				echo			"</div>";
-				echo		"</main>";
+		
 
-			}
-			else
-			{
-				header("Location: panelEntradas.php?imgError");
-				exit();
-			}
 		header("refresh:2; url=panelEntradas.php?slideEdited");
-
 	}
 
- ?>
+	?>
 
 
 

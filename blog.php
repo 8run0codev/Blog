@@ -55,6 +55,7 @@ $empezar_desde = ($pagina-1) * $cantidad_resultados_por_pagina;
 
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="css/materialize.css"/>
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 
 	<!--JS-->
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
@@ -89,7 +90,7 @@ $empezar_desde = ($pagina-1) * $cantidad_resultados_por_pagina;
 	<main>
 		<div class="row">
 				<div class="container">
-				<div class="col s12"><h4 class="grey-text" style="margin-left: 10px">Ultimas entradas:</h4></div>
+				<div class="col s12 animated fadeIn"><h4 class="grey-text" style="margin-left: 10px">Ultimas entradas:</h4></div>
 				<?php
 				include 'conex.php';
 //Obtiene TODO de la tabla
@@ -122,8 +123,9 @@ $empezar_desde = ($pagina-1) * $cantidad_resultados_por_pagina;
 				};
 				?>
 
-				<hr>
+				<div class="col s12">	
 				<ul class="pagination">
+					<div class="divider"></div><br>
 					<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
 					<li class="disabled"><a href="blog.php">Más entradas</a></li>
 
@@ -137,6 +139,7 @@ $empezar_desde = ($pagina-1) * $cantidad_resultados_por_pagina;
 					}; ?>
 					<li class="waves-effect"><a href="#"><i class="material-icons">chevron_right</i></a></li>
 				</ul>
+				</div>
 			</div>
 		</div>
 	</main>
