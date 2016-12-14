@@ -4,7 +4,9 @@
 
 	while ($registro = mysql_fetch_array($consulta)) {
 
-		include 'formatoPrevio.php';		
+		include 'formatoPrevio.php';			
 	}
+
+	
 
  ?>

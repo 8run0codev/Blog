@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script src="dist/sweetalert-dev.js"></script>
+	
 
 	<!--CSS-->
 	<link rel="stylesheet" type="text/css" href="css/home.css">
@@ -136,11 +137,11 @@
 	}
 
 	?>
-	<!-- Erro imagen -->
+	<!-- Error imagen -->
 	
 	<!-- editor -->
 	<div id="editor" class="col s12 m12 l12">
-		<form action="agregarEntrada.php" method="POST" enctype="multipart/form-data">
+		<form onsubmit="return validarEntrada()" action="agregarEntrada.php" method="POST" name="entradas" enctype="multipart/form-data" >
 
 			<div class="col s12 blue-grey lighten-5">		
 				<div class="col s0 m1 l1"></div>
@@ -251,6 +252,9 @@
 		</div>
 	</div>
 	<!--Editar slide -->
+
+	<!-- Validaciones -->
+	<script type="text/javascript" src="js/panel.js"></script>
 
 </body>
 </html>

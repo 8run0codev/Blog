@@ -41,13 +41,13 @@
 				<a href="index.php" class="brand-logo"><img src="img/logo.png" height="56px" style="margin-left: 20px"></a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#">Blog</a></li>
+					<li><a href="blog.php">Blog</a></li>
 					<li><a href="nosotros.html">Sobre nosotros</a></li>
 					<li><a href="ubicacion.html">Localización</a></li>
 					<li><a href="contacto.html">Contacto</a></li>
 				</ul>
 				<ul class="side-nav" id="mobile-demo">
-					<li><a href="#">Blog</a></li>
+					<li><a href="blog.php">Blog</a></li>
 					<li><a href="nosotros.html">Sobre nosotros</a></li>
 					<li><a href="ubicacion.html">Localización</a></li>
 					<li><a href="contacto.html">Contacto</a></li>
@@ -80,10 +80,14 @@
 
 			<div class="col s12 m12 l8" id="entradas">
 				<?php 
+					include 'recuperarEntradas.php';
 
-					include 'recuperarEntradas.php'
 				?>
+
 			</div>
+			<hr>
+
+
 			<div class="col s12 m12 l4">
 				<h5 class="grey-text">Nosotros en Facebook:</h5>
 
@@ -115,7 +119,7 @@
 		<div class="footer-copyright">
 			<div class="container">
 				© 2017 - Dirección.
-				<a class="grey-text text-lighten-4 right" href="panelEntradas.php">Ingresa</a>
+				<a class="grey-text text-lighten-4 right" href="panelEntradas.php">Ingresar</a>
 			</div>
 		</div>
 	</footer>
