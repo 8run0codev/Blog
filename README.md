@@ -16,4 +16,4 @@ Esto es un Blog personal sencillo, por el momento tiene estas caracteristicas:
 
 -Pagina sobre nosotros
 
-
+#Recuerda crear la base de datos blog.sql e inportar su estructura para ver funcionar el proyecto ✌️
